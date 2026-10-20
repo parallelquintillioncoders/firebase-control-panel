@@ -6,6 +6,9 @@
 
 ## 📸 Preview
 
+### 1-Click Terminal Launcher (Windows CMD & macOS)
+![Command Prompt Launcher](docs/screenshots/cmd-launcher.png)
+
 ### Modern Overview & Website Manager
 ![Dashboard Overview](docs/screenshots/dashboard-overview.png)
 

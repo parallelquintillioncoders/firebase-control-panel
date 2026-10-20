@@ -36,10 +36,10 @@ if not exist "node_modules\multer\package.json" (
   call npm install --no-audit --no-fund
   if errorlevel 1 (pause & exit /b 1)
 )
-echo Firebase CLI is installed inside this project. No global PATH needed.
+echo [*] Local Firebase CLI ready. No global PATH setup needed.
+echo [*] Opening Dashboard: http://127.0.0.1:4183 ...
+echo [*] Keep this window open for background deployments.
 echo.
-echo Dashboard: http://127.0.0.1:4183
-echo Keep this window open for background deployments.
 set "LAUNCHPAD_AUTO_OPEN=1"
 node server\index.js
 if errorlevel 1 echo Dashboard server stopped with an error.

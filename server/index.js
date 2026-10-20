@@ -311,11 +311,16 @@ app.use((err, req, res, next) => {
   res.status(err.status || (err instanceof multer.MulterError ? 413 : 500)).json({ error: err.message || 'Unexpected server error' });
 });
 app.listen(PORT, HOST, () => {
-  console.log(`\n  Firebase Control Panel → http://${HOST}:${PORT}`);
-  console.log(`  Background deployment engine ready. Data: ${store.dataDir}`);
-  if (TOKEN) console.log('  Access password protection is enabled.');
-  else console.log('  Local-only mode. Set DASHBOARD_TOKEN when exposing over a network.');
-  console.log('');
+  console.log(`
+  ==============================================================
+    LAUNCHPAD FIREBASE CONTROL PANEL v4
+  ==============================================================
+  ➜  Local Dashboard:  http://${HOST}:${PORT}
+  ➜  Deployment Engine: Ready (classic Firebase Hosting)
+  ➜  Storage Path:      ${store.dataDir}
+  ➜  Security Mode:     ${TOKEN ? 'Access password protection enabled' : 'Local-only session'}
+  ==============================================================
+`);
   if (process.env.LAUNCHPAD_AUTO_OPEN === '1') {
     let openCmd = 'xdg-open', openArgs = [`http://127.0.0.1:${PORT}`];
     if (process.platform === 'win32') {
