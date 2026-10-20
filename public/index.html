@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en" data-theme="flame" data-mode="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f1b2e" />
+  <meta name="description" content="PQC Launchpad by Parallel Quintillion Coders. Manage Firebase Hosting websites, builds and deployments from your local workspace." />
+  <title>Firebase Hosting c-Panel · Powered by PQC</title>
+  <script src="/preferences-init.js?v=5-themes-1"></script>
+  <link rel="stylesheet" href="/styles.css?v=5-themes-1" />
+  <link rel="stylesheet" href="/easy-setup.css?v=5-themes-1" />
+  <link rel="stylesheet" href="/workspace-ui.css?v=5-themes-1" />
+  <link rel="stylesheet" href="/themes.css?v=5-themes-1" />
+  <link rel="icon" href="/flame-logo.png?v=1" type="image/png" />
+</head>
+<body>
+  <a class="skip-link" href="#pageTitle">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-library" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9M12 3c-3 3-4 6-4 9s1 6 4 9"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 3c4 1 7 4 9 9-3 4-7 6-11 7l-5-5c1-4 3-8 7-11Z"/><circle cx="14" cy="10" r="2"/><path d="M6 12H3l-1 5 5-1m5 2v3l-5 1 1-5"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="17" rx="2.8"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M10 3h4l.6 2.3 1.8 1 2.3-.7 2 3.5-1.7 1.7v2.3l1.7 1.7-2 3.5-2.3-.7-1.8 1L14 21h-4l-.6-2.3-1.8-1-2.3.7-2-3.5L5 13.2v-2.4L3.3 9.1l2-3.5 2.3.7 1.8-1Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5"/><path d="M4 16v4h16v-4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 4h7v7m0-7-10 10"/><path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7V3l-3 2a8 8 0 1 0 3 9M20 7h-6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M5 2h9l5 5v15H5zM14 2v6h5M8 13h8M8 17h8"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M2.5 6a2 2 0 0 1 2-2h5l2.5 3h7.5a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5Zm-9 5v10l9 5 9-5V7M12 12v10"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 21 6v6c0 5-4 9-9 10-5-1-9-5-9-10V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M2 12h5l3-8 4 16 3-8h5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 10 9 5 9-5m-18 5 9 5 9-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4M8 17H6a5 5 0 0 1 0-10h4m4 0h4a5 5 0 0 1 0 10h-4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 3 10 18H2Z"/><path d="M12 9v5m0 4h.01"/></symbol>
+    <symbol id="i-harddrive" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 13h20m-5 3h1m-6 0h1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.7 7.3L22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7Z"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="Firebase Hosting c-Panel overview"><img class="brand-logo" src="/flame-logo.png?v=1" width="1254" height="1254" alt="Firebase Hosting c-Panel, powered by Parallel Quintillion Coders" /></a>
+      <div class="workspace-switcher">
+        <button type="button" class="workspace-picker" id="workspacePicker" aria-expanded="false" aria-controls="workspacePanel"><span class="workspace-avatar">P</span><span class="workspace-label"><strong id="workspaceName">My workspace</strong><small id="workspaceDescription">All Firebase projects</small></span><svg class="icon dim" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div id="workspacePanel" class="workspace-panel" hidden><strong>Your Firebase projects</strong><p>Choose a project to filter Websites.</p><div id="workspaceProjects"></div><button type="button" class="workspace-option" data-go="settings">Account &amp; setup →</button></div>
+      </div>
+      <div class="nav-group-label">WORKSPACE</div>
+      <button id="easyLaunchNav" class="easy-nav"><svg><use href="#i-spark"/></svg> Easy Publish <svg style="margin-left:auto"><use href="#i-arrow"/></svg></button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><svg class="icon"><use href="#i-grid"/></svg><span>Overview</span></button>
+        <button class="nav-item" data-view="websites"><svg class="icon"><use href="#i-globe"/></svg><span>Websites</span><span class="nav-count" id="siteNavCount">0</span></button>
+        <button class="nav-item" data-view="deployments"><svg class="icon"><use href="#i-rocket"/></svg><span>Deployments</span></button>
+        <button class="nav-item" data-view="logs"><svg class="icon"><use href="#i-terminal"/></svg><span>Activity logs</span></button>
+      </nav>
+      <div class="nav-group-label tools-label">MANAGEMENT</div>
+      <nav class="main-nav">
+        <button class="nav-item" data-view="settings"><svg class="icon"><use href="#i-settings"/></svg><span>Settings & setup</span></button>
+        <a class="nav-item" href="https://console.firebase.google.com/" rel="noopener noreferrer" target="_blank"><svg class="icon"><use href="#i-external"/></svg><span>Firebase Console</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help"><span class="sidebar-help-icon"><svg class="icon"><use href="#i-spark"/></svg></span><strong>Ready for launch?</strong><p>Upload a build, test it locally and deploy with one click.</p><button class="sidebar-help-btn" id="sidebarUpload">Upload website <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+        <div class="sidebar-footer"><span class="footer-dot"></span><span id="sidebarCliLabel">Checking Firebase CLI</span><span class="version-label">v4.0</span></div>
+      </div>
+    </aside>
+
+    <button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Close navigation" hidden></button>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left"><button id="mobileMenu" class="icon-btn mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><svg class="icon"><use href="#i-menu"/></svg></button><button type="button" class="breadcrumb-muted breadcrumb-home" data-go="overview">Workspace</button><span class="breadcrumb-sep">/</span><span class="breadcrumb-current" id="breadcrumb">Overview</span></div>
+        <div class="topbar-actions"><button class="easy-entry" id="easyLaunchTop"><svg><use href="#i-spark"/></svg> Easy Publish</button><span class="cli-status" id="cliIndicator"><span class="status-bullet"></span><span>Checking connection</span></span><button class="icon-btn top-refresh" id="refreshBtn" title="Refresh projects and websites"><svg class="icon"><use href="#i-refresh"/></svg></button><div class="preference-controls"><label class="compact-preference"><span class="sr-only">Color theme</span><select data-preference="theme" aria-label="Color theme"><option value="flame">Flame</option><option value="classic">Classic</option></select></label><button class="mode-toggle" data-mode-toggle type="button" aria-label="Switch to dark mode">◐ <span>Dark mode</span></button><label class="compact-preference"><span class="sr-only">Language</span><select data-preference="language" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="ru">Русский</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="ar">العربية</option><option value="zh">中文</option></select></label></div><div class="account-toolbar"><button class="btn btn-outline btn-small" id="accountLoginTop" hidden>Log in</button><button class="btn btn-outline btn-small" id="logoutBtn" hidden>Log out</button><button type="button" class="account-avatar" id="accountMenuButton" aria-label="Account details" aria-expanded="false" aria-controls="accountPanel" aria-haspopup="dialog">?</button></div></div>
+        <section class="account-popover" id="accountPanel" role="dialog" aria-labelledby="accountPanelTitle" hidden>
+          <div class="account-heading"><strong id="accountPanelTitle">Your account</strong><button type="button" class="icon-btn" id="accountClose" aria-label="Close account menu">×</button></div>
+          <p id="accountPanelEmail"></p><p id="accountPanelStatus" role="status"></p>
+          <div class="account-actions"><button class="btn btn-primary" type="button" id="accountLogin" hidden>Log in</button><button class="btn btn-outline" type="button" id="accountLogout" hidden>Log out</button><button class="btn btn-outline" type="button" data-go="settings">Account &amp; setup →</button></div>
+          <fieldset class="account-preferences"><legend>Appearance &amp; language</legend>
+            <label>Color theme<select data-preference="theme"><option value="flame">Flame</option><option value="classic">Classic</option></select></label>
+            <label>Display mode<select data-preference="mode"><option value="light">Light mode</option><option value="dark">Dark mode</option></select></label>
+            <label>Language<select data-preference="language"><option value="en">English</option><option value="es">Español</option><option value="ru">Русский</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="ar">العربية</option><option value="zh">中文</option></select></label>
+          </fieldset>
+          <button class="btn btn-outline" id="accountCookies" type="button">Cookie preferences</button>
+        </section>
+      </header>
+
+      <div class="page-scroll" id="pageScroll">
+        <div id="pageHeader" class="page-header">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR HOSTING WORKSPACE</div><h1 id="pageTitle" tabindex="-1">Good to see you <span class="wave">✳</span></h1><p class="page-subtitle" id="pageSubtitle">Manage all your Firebase websites from one beautiful dashboard.</p></div>
+          <div class="header-actions"><button class="btn btn-soft" id="headerRefresh"><svg class="icon"><use href="#i-refresh"/></svg> Refresh</button><button class="btn btn-primary" id="headerUpload"><svg class="icon"><use href="#i-plus"/></svg> Upload new build</button></div>
+        </div>
+
+        <section id="view-overview" class="view active">
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-icon stat-purple"><svg class="icon"><use href="#i-globe"/></svg></div><div class="stat-small">Hosting websites</div><div class="stat-number" id="statSites">—</div><div class="stat-note">Across your accessible projects</div><div class="stat-decoration one"></div></article>
+            <article class="stat-card"><div class="stat-icon stat-teal"><svg class="icon"><use href="#i-box"/></svg></div><div class="stat-small">Local builds ready</div><div class="stat-number" id="statStaged">—</div><div class="stat-note">Prepared for deployment</div><div class="stat-decoration two"></div></article>
+            <article class="stat-card"><div class="stat-icon stat-blue"><svg class="icon"><use href="#i-rocket"/></svg></div><div class="stat-small">Successful deployments</div><div class="stat-number" id="statSuccess">—</div><div class="stat-note">Managed through PQC Launchpad</div><div class="stat-decoration three"></div></article>
+            <article class="stat-card"><div class="stat-icon stat-orange"><svg class="icon"><use href="#i-activity"/></svg></div><div class="stat-small">Active deployments</div><div class="stat-number" id="statActive">—</div><div class="stat-note">Running in the background</div><div class="stat-decoration four"></div></article>
+          </div>
+
+          <div class="section-line"><div><h2>Your websites</h2><p>Choose where to publish your latest build.</p></div><button class="text-link" data-go="websites">View all websites <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+          <div id="featuredSites" class="site-grid"></div>
+          <div class="bottom-grid">
+            <section class="panel"><div class="panel-head"><div><h2>Recent deployments</h2><p>Track all releases and preview builds.</p></div><button class="icon-btn subtle" data-go="deployments" title="View all"><svg class="icon"><use href="#i-arrow"/></svg></button></div><div id="recentJobs" class="recent-jobs"></div></section>
+            <section class="panel quickstart-panel"><div class="panel-head"><div><h2>Quick setup</h2><p>Everything you need to publish.</p></div><span class="pill pill-purple">GET STARTED</span></div><div class="step-list"><div class="setup-step"><span class="step-index">01</span><div><strong>Connect Firebase</strong><span>Install CLI and sign in on this machine.</span></div><span class="step-indicator" id="stepCli"></span></div><div class="setup-step"><span class="step-index">02</span><div><strong>Select a Hosting site</strong><span>Pick a Firebase project and website.</span></div><span class="step-indicator" id="stepSite"></span></div><div class="setup-step"><span class="step-index">03</span><div><strong>Upload and deploy</strong><span>Add a ZIP/build folder and publish it.</span></div><span class="step-indicator" id="stepBuild"></span></div></div><button class="btn btn-outline full" data-go="settings">View setup guide <svg class="icon"><use href="#i-arrow"/></svg></button></section>
+          </div>
+        </section>
+
+        <section id="view-websites" class="view">
+          <div class="toolbar"><div class="search-field"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="siteSearch" placeholder="Search website or project..." autocomplete="off" /></div><div class="toolbar-right"><span class="input-prefix">Project</span><select id="projectFilter" class="select"><option value="all">All projects</option></select><button class="btn btn-soft btn-small" id="siteSync"><svg class="icon"><use href="#i-refresh"/></svg> Sync</button></div></div>
+          <div id="allSites" class="site-grid all-sites-grid"></div>
+        </section>
+
+        <section id="view-deployments" class="view"><div class="toolbar"><div><h2>Deployment history</h2><p class="subdued">Every release started from this dashboard.</p></div><select id="deployFilter" class="select"><option value="all">All deployments</option><option value="live">Production only</option><option value="preview">Previews only</option><option value="failed">Failed</option></select></div><div class="panel table-panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>WEBSITE</th><th>TYPE</th><th>STATUS</th><th>STARTED</th><th>FINISHED</th><th>DETAILS</th></tr></thead><tbody id="deployTable"></tbody></table></div></div></section>
+
+        <section id="view-logs" class="view"><div class="logs-layout"><div class="panel logs-jobs-panel"><div class="panel-head"><div><h2>Execution history</h2><p>Select a task to read its output.</p></div></div><div id="logJobList" class="log-job-list"></div></div><div class="panel log-detail-panel"><div class="panel-head"><div><h2 id="logTitle">Execution output</h2><p id="logSubtitle">Real-time Firebase CLI activity, errors and details.</p></div><div class="head-tools"><button class="icon-btn subtle" id="copyLogs" title="Copy logs"><svg class="icon"><use href="#i-copy"/></svg></button><button class="icon-btn subtle" id="downloadLogs" title="Download logs"><svg class="icon"><use href="#i-download"/></svg></button></div></div><div class="terminal-window"><div class="terminal-top"><span class="term-lights"><b></b><b></b><b></b></span><span id="terminalLabel">firebase-cli / output</span><span class="term-live"><span class="live-pulse"></span> LIVE</span></div><pre id="terminalOutput" class="terminal-output"><span class="term-muted">Select a deployment to view its logs.</span></pre></div></div></div></section>
+
+        <section id="view-settings" class="view">
+          <div class="settings-layout">
+            <div class="panel setting-panel span-2 connect-hero">
+              <div class="panel-head"><div><div class="eyebrow"><span class="eyebrow-dot"></span> STEP 01 — GOOGLE ACCOUNT</div><h2>Connect your Firebase account</h2><p>Use the official Firebase CLI Google sign-in. No global Firebase command or copied secret keys are required.</p></div><span class="pill pill-orange" id="googleStatusBadge">Checking account</span></div>
+              <div class="account-connect-content">
+                <div class="connect-visual"><svg class="icon"><use href="#i-shield"/></svg></div>
+                <div class="connect-detail"><strong id="googleAccountLabel">Checking Google account…</strong><span id="googleAccountHint">Your browser will ask you to approve access.</span><div class="account-pills" id="googleAccountPills"></div></div>
+              </div>
+              <div class="connect-actions"><button class="btn btn-primary" id="connectGoogle"><svg class="icon"><use href="#i-lock"/></svg> Connect Google Account</button><button class="btn btn-outline" id="connectCode"><svg class="icon"><use href="#i-terminal"/></svg> Alternative code login</button><button class="btn btn-soft" id="checkLogin"><svg class="icon"><use href="#i-refresh"/></svg> Check connection</button></div>
+              <p class="connect-caption" id="connectInfo">On Windows, Connect opens an interactive login window. Complete Google approval there, then click Check connection. On Mac/Linux use Alternative code login.</p>
+              <div class="code-login" id="codeLogin" hidden><div class="code-login-head"><strong>Browser authorization code login</strong><span class="pill pill-purple" id="codeLoginStatus">Waiting</span></div><pre id="loginConsole" aria-live="polite">Click Alternative code login to start.</pre><div class="code-login-input"><input id="loginResponse" aria-label="Google authorization code or CLI response" type="text" autocomplete="off" placeholder="Paste Google authorization code or reply to CLI prompt"/><button class="btn btn-primary btn-small" id="sendLoginResponse">Send</button></div><small>Use only Google's official link printed above. Authorization inputs are sent to your local Node server and are not saved in PQC Launchpad logs.</small></div>
+            </div>
+            <div class="panel setting-panel span-2 runtime-panel">
+              <div class="panel-head"><div><h2>Runtime health</h2><p>Bundled Firebase CLI and local server.</p></div><span id="settingsCliBadge" class="pill pill-gray">Checking</span></div>
+              <div class="runtime-grid">
+              <div class="setting-row"><div class="setting-icon"><svg class="icon"><use href="#i-terminal"/></svg></div><div><strong>Local Firebase CLI</strong><span id="settingsCliVersion">Checking installation...</span></div><span id="settingsCliStatus" class="mini-status">—</span></div>
+              <div class="setting-row"><div class="setting-icon"><svg class="icon"><use href="#i-lock"/></svg></div><div><strong>Authentication method</strong><span id="settingsAuth">Checking configuration...</span></div></div>
+              <div class="setting-row"><div class="setting-icon"><svg class="icon"><use href="#i-harddrive"/></svg></div><div><strong>Workspace storage</strong><span id="settingsStorage">Local filesystem</span></div></div>
+              <div class="setting-row"><div class="setting-icon"><svg class="icon"><use href="#i-globe"/></svg></div><div><strong>Backend address</strong><span id="settingsEndpoint">—</span></div></div>
+              </div>
+              <button class="btn btn-outline" id="settingsRefresh"><svg class="icon"><use href="#i-refresh"/></svg> Refresh all websites</button>
+            </div>
+            <div class="panel setting-panel project-create-panel">
+              <div class="panel-head"><div><h2>Create a Firebase project</h2><p>Optional: start from a brand-new Firebase project.</p></div><span class="pill pill-purple">OPTIONAL</span></div>
+              <label class="field"><span>Project display name</span><input id="newProjectName" minlength="3" maxlength="90" placeholder="My Company Website" /></label>
+              <label class="field"><span>Unique project ID</span><input id="newProjectId" maxlength="30" placeholder="my-company-website-2026" aria-describedby="newProjectIdHint"/><small id="newProjectIdHint">6–30 lowercase letters, digits and hyphens. Start with a letter and end with a letter or digit. Cannot be changed later.</small></label>
+              <div class="settings-tip"><svg class="icon"><use href="#i-info"/></svg><span>Creates a real Firebase project in your Google account (subject to permissions, quotas and Google terms). You can also use an existing project instead.</span></div>
+              <button class="btn btn-outline" id="createProjectBtn"><svg class="icon"><use href="#i-plus"/></svg> Create Firebase project</button>
+              <p id="createProjectResult" class="create-site-result" aria-live="polite"></p>
+            </div>
+            <div class="panel setting-panel hosting-create-panel">
+              <div class="panel-head"><div><h2>Create a Firebase Hosting site</h2><p>Add a new website inside an existing Firebase project.</p></div><span class="pill pill-purple">STEP 02</span></div>
+              <label class="field"><span>Firebase project</span><select id="newSiteProject" class="select"><option value="">Connect Google first</option></select></label>
+              <label class="field"><span>New Hosting site ID</span><input id="newSiteId" maxlength="30" pattern="[a-z0-9-]+" placeholder="example: my-website" aria-describedby="newSiteIdHint"/><small id="newSiteIdHint">2–30 lowercase letters, digits or hyphens. Start and end with a letter or digit. Must be globally unique.</small></label>
+              <div class="settings-tip"><svg class="icon"><use href="#i-info"/></svg><span>Creates an actual Firebase Hosting site with a <code>.web.app</code> URL. You need permission to create sites in the project.</span></div>
+              <button class="btn btn-primary" id="createSiteBtn"><svg class="icon"><use href="#i-plus"/></svg> Create Hosting site</button>
+              <p id="createSiteResult" class="create-site-result" aria-live="polite"></p>
+            </div>
+            <div class="panel setting-panel span-2">
+              <div class="panel-head"><div><h2>Deploy in three steps</h2><p>All deployments run on the local backend, with searchable logs.</p></div><span class="pill pill-green">WORKFLOW</span></div>
+              <div class="feature-grid">
+                <div class="feature-info"><span class="feature-icon green"><svg class="icon"><use href="#i-grid"/></svg></span><strong>01 · Select website</strong><p>Connect your Google account, choose project and Hosting site, or create a new site.</p></div>
+                <div class="feature-info"><span class="feature-icon violet"><svg class="icon"><use href="#i-upload"/></svg></span><strong>02 · Upload & preview</strong><p>Upload your built website ZIP or folder. Open the local sandbox preview or deploy a preview channel.</p></div>
+                <div class="feature-info"><span class="feature-icon blue"><svg class="icon"><use href="#i-rocket"/></svg></span><strong>03 · Deploy & monitor</strong><p>Confirm the production site before publishing. Watch real-time Firebase output and saved error logs.</p></div>
+              </div>
+              <div class="settings-tip"><svg class="icon"><use href="#i-shield"/></svg><span>Runs locally at <code id="settingsLocalAddress">this local server</code>. Google consent cannot be bypassed. This manages classic Firebase Hosting, not Firebase App Hosting, Functions, or the entire Firebase Console.</span></div>
+            </div>
+          </div>
+        </section>
+        <footer class="main-footer"><span>PQC Launchpad · Built by <a href="https://parallelquintillioncoders.com/" target="_blank" rel="noopener noreferrer">Parallel Quintillion Coders ↗</a></span><div class="footer-links"><a href="https://parallelquintillioncoders.com/pages/contact.php" target="_blank" rel="noopener noreferrer">Contact PQC</a><button type="button" id="privacyDetails">Privacy &amp; storage</button><button type="button" id="termsDetails">Terms &amp; conditions</button><button type="button" id="cookieSettings">Cookie preferences</button></div></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="uploadModal" aria-hidden="true"><section class="modal upload-modal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle"><div class="modal-header"><div class="modal-icon"><svg class="icon"><use href="#i-upload"/></svg></div><div><h2 id="uploadTitle">Upload a website build</h2><p>Prepare your latest files for a selected Firebase site.</p></div><button class="icon-btn close-btn" data-close="uploadModal" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button></div><div class="modal-body"><div class="field-row"><label class="field"><span>Firebase project <em>*</em></span><select id="uploadProject" class="select form-select"><option value="">Select a project</option></select></label><label class="field"><span>Hosting website <em>*</em></span><select id="uploadSite" class="select form-select"><option value="">Select a website</option></select></label></div><div class="upload-field"><span class="field-label">Website files <em>*</em></span><div class="upload-drop" id="uploadDrop" role="button" tabindex="0"><div class="drop-illustration"><svg class="icon"><use href="#i-upload"/></svg></div><strong>Choose a ZIP or a build folder</strong><p>Upload the folder containing <code>index.html</code> (e.g. dist, build, public)</p><div class="drop-actions"><button type="button" class="btn btn-outline btn-small" id="chooseZip"><svg class="icon"><use href="#i-file"/></svg> Select ZIP</button><button type="button" class="btn btn-outline btn-small" id="chooseFolder"><svg class="icon"><use href="#i-folder"/></svg> Select folder</button></div><input id="zipInput" type="file" accept=".zip,application/zip" hidden /><input id="folderInput" type="file" webkitdirectory directory multiple hidden /></div><div class="chosen-build" id="chosenBuild" hidden><div class="chosen-icon"><svg class="icon"><use href="#i-box"/></svg></div><div><strong id="chosenLabel">—</strong><span id="chosenMeta">—</span></div><button class="icon-btn subtle" id="clearUpload" title="Remove selection"><svg class="icon"><use href="#i-x"/></svg></button></div></div><label class="toggle-line"><span class="toggle-copy"><strong>Single-page application (SPA)</strong><small>Route unmatched URLs to index.html (React, Vue, etc.)</small></span><input id="spaToggle" type="checkbox" checked /><span class="toggle-ui"></span></label><div class="modal-note"><svg class="icon"><use href="#i-info"/></svg> Uploads are staged locally first. Nothing goes live until you click <strong>Deploy to production</strong>.</div><div class="upload-progress" id="uploadProgress" hidden><div class="progress-track"><div id="progressFill"></div></div><span id="progressText">Uploading...</span></div></div><div class="modal-footer"><button class="btn btn-soft" data-close="uploadModal">Cancel</button><button id="startUpload" class="btn btn-primary"><svg class="icon"><use href="#i-upload"/></svg> Upload build</button></div></section></div>
+
+  <div class="modal-overlay" id="siteModal" aria-hidden="true"><section class="modal site-modal" role="dialog" aria-modal="true" aria-labelledby="siteModalTitle"><div class="modal-header"><div class="modal-icon purple"><svg class="icon"><use href="#i-globe"/></svg></div><div><h2 id="siteModalTitle">Website details</h2><p id="siteModalSubtitle">Manage this Hosting destination.</p></div><button class="icon-btn close-btn" data-close="siteModal" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button></div><div class="site-detail-content"><div class="site-modal-meta" id="siteModalMeta"></div><div class="tabs"><button class="tab active" data-tab="build">Build files</button><button class="tab" data-tab="preview">Local preview</button><button class="tab" data-tab="deploys">History</button></div><div id="siteTabContent" class="site-tab-content"></div></div><div class="modal-footer"><button class="btn btn-outline" id="detailDownloadLive">Download live ZIP</button><button class="btn btn-outline" id="detailDownloadLocal">Download uploaded ZIP</button><button class="btn btn-soft" id="detailUpload"><svg class="icon"><use href="#i-upload"/></svg> New upload</button><button class="btn btn-outline" id="detailPreview"><svg class="icon"><use href="#i-eye"/></svg> Preview channel</button><button class="btn btn-primary" id="detailDeploy"><svg class="icon"><use href="#i-rocket"/></svg> Deploy to production</button></div></section></div>
+
+  <div class="modal-overlay" id="confirmModal" aria-hidden="true"><section class="modal confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><div class="modal-header"><div class="modal-icon warning"><svg class="icon"><use href="#i-alert"/></svg></div><div><h2 id="confirmTitle">Publish this website?</h2><p id="confirmSubtitle">This action updates your live Firebase Hosting site.</p></div><button class="icon-btn close-btn" data-close="confirmModal" aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button></div><div class="confirm-summary" id="confirmSummary"></div><div class="modal-footer"><button class="btn btn-soft" data-close="confirmModal">Cancel</button><button class="btn btn-primary" id="confirmDeploy"><svg class="icon"><use href="#i-rocket"/></svg> Yes, deploy now</button></div></section></div>
+
+  <div class="modal-overlay" id="authModal" aria-hidden="true"><section class="modal auth-modal" role="dialog" aria-modal="true"><div class="auth-logo"><img src="/flame-logo.png?v=1" width="1254" height="1254" alt="Firebase Hosting c-Panel, powered by PQC" /></div><h2>Welcome to your c-Panel</h2><p>This dashboard is password protected. Enter your server's access password to continue.</p><label class="field"><span>Dashboard password</span><input type="password" id="authPassword" placeholder="Your access password" autocomplete="current-password" /></label><button class="btn btn-primary full" id="authSubmit"><svg class="icon"><use href="#i-lock"/></svg> Unlock dashboard</button><p class="auth-error" id="authError"></p></section></div>
+
+
+  <!-- Beginner mode: all account, website, upload and publish steps in one screen. -->
+  <section id="easyPage" class="easy-page" aria-label="Easy Publish setup wizard" hidden>
+    <header class="easy-head">
+      <div class="easy-logo"><img src="/flame-logo.png?v=1" width="1254" height="1254" alt="Firebase Hosting c-Panel, powered by PQC" /><div>Easy Publish<small>POWERED BY PQC</small></div></div>
+      <div class="ez-top-right"><button type="button" class="mode-toggle" data-mode-toggle aria-label="Switch to dark mode">◐ <span>Dark mode</span></button><span class="ez-private">Private on this computer</span><button id="ezLogout" class="ez-btn secondary">Log out</button><button id="ezClose" class="ez-dismiss">Open full dashboard ✕</button></div>
+    </header>
+    <div class="easy-content">
+      <aside class="ez-side">
+        <div class="ez-eyebrow">START HERE · NO CODING REQUIRED</div>
+        <h1>Put your website online.</h1>
+        <p class="ez-sub">A simple 4-step guide. You don't need to type terminal commands or know how Firebase works.</p>
+        <ol class="ez-steps" id="ezStepRail">
+          <li class="ez-step active" data-step="1"><span class="ez-number">1</span><div><div class="ez-step-title">Connect Google</div><div class="ez-step-desc">Authorize your Firebase account</div></div></li>
+          <li class="ez-step" data-step="2"><span class="ez-number">2</span><div><div class="ez-step-title">Choose website</div><div class="ez-step-desc">Pick where to publish</div></div></li>
+          <li class="ez-step" data-step="3"><span class="ez-number">3</span><div><div class="ez-step-title">Upload files</div><div class="ez-step-desc">ZIP or website folder</div></div></li>
+          <li class="ez-step" data-step="4"><span class="ez-number">4</span><div><div class="ez-step-title">Preview & publish</div><div class="ez-step-desc">Review before going live</div></div></li>
+        </ol>
+        <div class="ez-side-help"><strong>What happens to my old website?</strong>Nothing changes until you approve <b>Publish website</b>. Only the website you select is updated.<br /><a href="https://firebase.google.com/docs/hosting" target="_blank" rel="noopener">Learn about Firebase Hosting ↗</a></div>
+      </aside>
+      <main class="ez-main">
+        <section class="ez-panel" id="ezPanel1">
+          <div class="ez-panel-intro"><span class="ez-tag">STEP 1 OF 4</span><h2 class="ez-h2">Connect your Google account</h2><p class="ez-muted">We'll find all websites in your Firebase account automatically.</p></div>
+          <div class="ez-center">
+            <div class="ez-hero-icon"><svg><use href="#i-shield"/></svg></div>
+            <h3>Secure Google sign-in</h3><p>Click below, select your Google account in the browser and approve access. Your Google password is never entered in PQC Launchpad.</p>
+            <div id="ezLoginState" class="ez-status"><span class="ez-dot"></span><span>Checking connection…</span></div>
+            <div class="ez-row"><button class="ez-btn primary big" id="ezConnect"><svg><use href="#i-lock"/></svg> Sign in with Google</button><button class="ez-btn secondary" id="ezCheck"><svg><use href="#i-refresh"/></svg> Check connection</button></div>
+            <div class="ez-info"><svg class="icon" style="flex:none"><use href="#i-info"/></svg><span>A small <strong>Google sign-in</strong> window may appear on Windows. Complete Google's browser approval. PQC Launchpad will check the result automatically.</span></div>
+            <div id="ezLoginMessage" class="ez-message" aria-live="polite"></div>
+            <button class="ez-link" id="ezLoginHelp" style="margin-top:15px">Sign-in window not appearing? Use browser sign-in here ↓</button>
+            <div class="ez-auth-fallback" id="ezAuthFallback" hidden>
+              <div class="ez-fallback-head"><strong>Sign in using your browser</strong><span id="ezFallbackStatus">Ready</span></div>
+              <p>1. Click <b>Start browser sign-in</b>, then <b>Open Google login</b>. Google may give you a one-time code.</p>
+              <div class="ez-row"><button class="ez-btn secondary" id="ezStartFallback">Start browser sign-in</button><a class="ez-btn primary" id="ezOpenAuthLink" href="#" target="_blank" rel="noopener noreferrer" hidden>Open Google login ↗</a></div>
+              <label class="ez-label" for="ezAuthCode" style="margin-top:14px">2. Paste the one-time code from Google (if requested)</label>
+              <div class="ez-row"><input class="ez-input" id="ezAuthCode" placeholder="Paste authorization code here" autocomplete="off" aria-label="Google authorization code" style="flex:1;min-width:150px"/><button class="ez-btn primary" id="ezSubmitAuthCode">Complete sign-in</button></div>
+              <p class="ez-message" id="ezFallbackMessage" aria-live="polite">Google password is never entered here.</p>
+              <details><summary>Technical details (optional)</summary><pre id="ezAuthOutput">No sign-in process started.</pre></details>
+            </div>
+          </div><div class="ez-foot"><small>One-time authorization on your Windows computer</small><span class="ez-exit">No Firebase password needed</span></div>
+        </section>
+        <section class="ez-panel" id="ezPanel2" hidden>
+          <div class="ez-panel-intro"><span class="ez-tag">STEP 2 OF 4</span><h2 class="ez-h2">Where should your website go?</h2><p class="ez-muted">Select your existing website. If this is your first one, create it here.</p></div>
+          <div class="ez-center">
+            <div id="ezProjectStatus" class="ez-status ok"><span class="ez-dot"></span><span>Google account connected</span></div>
+            <div class="ez-field"><label class="ez-label" for="ezProject">Firebase project</label><select class="ez-select" id="ezProject"><option value="">Loading your projects…</option></select></div>
+            <div class="ez-field"><label class="ez-label" for="ezSite">Website to update</label><select class="ez-select" id="ezSite"><option value="">Choose your website</option></select></div>
+            <div class="ez-cloud" id="ezExistingSite" hidden><div><span class="name" id="ezSiteName">Selected website</span><small>This is your existing live website</small></div><a id="ezSiteUrl" target="_blank" rel="noopener" href="#">Open live ↗</a></div>
+            <div class="ez-row"><button class="ez-btn primary" id="ezToUpload" disabled>Continue to upload <svg><use href="#i-arrow"/></svg></button><button class="ez-btn secondary" id="ezRefreshSites"><svg><use href="#i-refresh"/></svg> Refresh websites</button></div>
+            <div class="ez-row"><button class="ez-btn secondary" id="ezDownloadLive" disabled>Download live website ZIP</button><button class="ez-btn secondary" id="ezDownloadLocal" disabled>Download uploaded ZIP</button></div><p class="ez-muted">Live ZIP recovers published static files. Uploaded ZIP contains the latest build saved on this computer. Original source code and backend data are not included.</p><div id="ezProjectMessage" class="ez-message" aria-live="polite"></div>
+            <div class="ez-mini" id="ezNewProjectBox" hidden>
+              <h4>Create a new Firebase project</h4><div class="ez-columns"><div><label class="ez-label">Project name</label><input class="ez-input" id="ezNewProjectName" placeholder="My Company Website" /></div><div><label class="ez-label">Unique project ID</label><input class="ez-input" id="ezNewProjectId" placeholder="my-company-site" /></div></div><div class="ez-row"><button class="ez-btn primary" id="ezCreateProject">Create project</button><button class="ez-btn secondary" id="ezCancelProject">Cancel</button></div><div class="ez-message" id="ezNewProjectMessage"></div>
+            </div>
+            <div class="ez-mini" id="ezNewSiteBox" hidden>
+              <h4>Create a Hosting website inside the selected project</h4><label class="ez-label" for="ezNewSiteId">Unique website name</label><input class="ez-input" id="ezNewSiteId" maxlength="30" placeholder="my-company-site" /><small style="display:block;margin-top:8px;color:#8794aa">Your address will be https://WEBSITE-NAME.web.app</small><div class="ez-row"><button class="ez-btn primary" id="ezCreateSite">Create website</button><button class="ez-btn secondary" id="ezCancelSite">Cancel</button></div><div class="ez-message" id="ezNewSiteMessage"></div>
+            </div>
+            <div class="ez-info" style="display:block"><strong>No website listed?</strong> <button class="ez-link" id="ezShowNewSite">Create a new website</button> &nbsp; · &nbsp; <button class="ez-link" id="ezShowNewProject">Create a new project</button></div>
+          </div><div class="ez-foot"><button class="ez-link" id="ezBack2">← Back</button><small>Your choice won't change other websites.</small></div>
+        </section>
+        <section class="ez-panel" id="ezPanel3" hidden>
+          <div class="ez-panel-intro"><span class="ez-tag">STEP 3 OF 4</span><h2 class="ez-h2">Upload your latest website</h2><p class="ez-muted">Choose a ZIP file or website folder that contains an <strong>index.html</strong> file.</p></div>
+          <div class="ez-center">
+            <div class="ez-cloud"><div><span class="name" id="ezUploadDest">Website destination</span><small>Files are uploaded locally first; not published yet</small></div><span class="ez-private">Safe staging</span></div>
+            <div class="ez-file-drop"><div class="ez-file-icon"><svg><use href="#i-upload"/></svg></div><strong>Choose your website files</strong><p>Use a ready-made HTML website ZIP, or select its full folder (dist / build / public).</p><div class="ez-row" style="justify-content:center"><button class="ez-btn primary" id="ezChooseZip"><svg><use href="#i-file"/></svg> Choose ZIP</button><button class="ez-btn secondary" id="ezChooseFolder"><svg><use href="#i-folder"/></svg> Choose folder</button></div><input id="ezZipInput" type="file" accept=".zip,application/zip" /><input id="ezFolderInput" type="file" webkitdirectory directory multiple /></div>
+            <div id="ezFilePicked" class="ez-file-preview" hidden><svg class="icon" style="color:#249a71"><use href="#i-check"/></svg><div><strong id="ezFileName">Files selected</strong><small id="ezFileSize">Ready to upload</small></div></div>
+            <label class="ez-check"><input id="ezSpa" type="checkbox" checked /> My website uses React / Vue / single-page routing (leave checked if unsure)</label>
+            <div class="ez-progress" id="ezUploadProgress" hidden><div class="ez-progress-track"><div class="ez-progress-fill" id="ezUploadBar"></div></div><div class="ez-progress-caption" id="ezUploadCaption">Uploading your files…</div></div>
+            <div class="ez-row"><button class="ez-btn primary big" id="ezUpload" disabled><svg><use href="#i-upload"/></svg> Upload website files</button><button class="ez-btn secondary" id="ezUseExisting" hidden>Use already uploaded build</button></div>
+            <p class="ez-message danger" id="ezUploadMessage" aria-live="polite"></p>
+          </div><div class="ez-foot"><button class="ez-link" id="ezBack3">← Change website</button><small>Your live site remains unchanged.</small></div>
+        </section>
+        <section class="ez-panel" id="ezPanel4" hidden>
+          <div class="ez-panel-intro"><span class="ez-tag">STEP 4 OF 4</span><h2 class="ez-h2" id="ezFinishTitle">Check and publish</h2><p class="ez-muted" id="ezFinishSubtitle">Preview the uploaded website, then approve the live update.</p></div>
+          <div class="ez-center">
+            <div class="ez-publish-target"><small>Selected live website</small><strong id="ezPublishUrl">—</strong></div>
+            <div class="ez-release-preview" id="ezLocalPreview"><iframe id="ezPreviewFrame" title="Website preview" sandbox="allow-scripts allow-forms allow-popups" referrerpolicy="no-referrer"></iframe></div>
+            <div class="ez-row"><button class="ez-btn secondary" id="ezNewTabPreview"><svg><use href="#i-external"/></svg> Open local preview</button><button class="ez-btn secondary" id="ezCloudPreview"><svg><use href="#i-eye"/></svg> Make a shareable test link</button></div>
+            <div id="ezCloudPreviewUrl" class="ez-message"></div>
+            <div class="ez-info"><svg class="icon" style="flex:none"><use href="#i-info"/></svg><span><strong>Publish changes the live website.</strong> It replaces files for the selected site only. Other Firebase websites are not updated.</span></div>
+            <div class="ez-status" id="ezJobStatus" hidden><span class="ez-dot"></span><span>Waiting for deployment…</span></div>
+            <p id="ezPublishMessage" class="ez-message" aria-live="polite"></p>
+            <div id="ezSuccess" class="ez-live-box" hidden><h3>🎉 Your website is live!</h3><p>The production deployment completed. Open the address below to inspect the website.</p><a id="ezSuccessLink" target="_blank" rel="noopener">Open live website ↗</a></div>
+            <div class="ez-row" style="margin-top:18px"><button class="ez-btn primary big" id="ezPublish"><svg><use href="#i-rocket"/></svg> Publish website</button><button class="ez-btn secondary" id="ezViewLogs" hidden>View deployment details</button></div>
+          </div><div class="ez-foot"><button class="ez-link" id="ezBack4">← Replace uploaded files</button><small>Publishing needs your confirmation.</small></div>
+        </section>
+      </main>
+    </div>
+  </section>
+  <section id="cookieBanner" class="cookie-banner" aria-labelledby="cookieTitle" hidden>
+    <div><strong id="cookieTitle">Your privacy, your choice</strong><p>We use essential storage to remember this choice and keep protected sessions signed in. Accept to load optional Google Fonts; decline to use device fonts. No analytics or advertising trackers are installed.</p><button type="button" id="cookieDetails" class="text-link">Privacy &amp; storage details</button></div>
+    <div class="cookie-actions"><button type="button" id="cookieDecline" class="btn btn-outline">Decline optional</button><button type="button" id="cookieAccept" class="btn btn-primary">Accept optional</button></div>
+  </section>
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true"><section class="modal privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle"><div class="modal-header"><div><h2 id="privacyTitle">Privacy &amp; local storage</h2><p>PQC Launchpad by Parallel Quintillion Coders</p></div><button class="icon-btn" data-close="privacyModal" aria-label="Close privacy details">×</button></div><div class="modal-body"><h3>Essential storage</h3><p>Your consent choice, theme, display mode and language preferences are stored in this browser. If your dashboard requires a password, the local server uses an essential session cookie to keep you signed in. Declining optional features does not disable authentication.</p><h3>Optional external fonts</h3><p>Accepting loads fonts from Google Fonts. Your browser connects to Google, which receives request information including your IP address. Declining uses fonts already on your device. Changing to decline stops future font loads; it cannot undo requests already made.</p><h3>Your workspace</h3><p>Builds and deployment history remain on your local server. Firebase account access and deployments communicate with Google through the existing Firebase CLI. This panel does not add analytics or advertising tracking.</p><p>Change your choice at any time using Cookie preferences in the footer.</p><a href="https://parallelquintillioncoders.com/" target="_blank" rel="noopener noreferrer">Visit Parallel Quintillion Coders ↗</a></div></section></div>
+  <div class="modal-overlay" id="termsModal" aria-hidden="true"><section class="modal privacy-modal" role="dialog" aria-modal="true" aria-labelledby="termsTitle"><div class="modal-header"><div><h2 id="termsTitle">Terms &amp; conditions</h2><p>PQC Launchpad by Parallel Quintillion Coders</p></div><button class="icon-btn" data-close="termsModal" aria-label="Close terms and conditions">×</button></div><div class="modal-body"><h3>Acceptance of terms</h3><p>By using PQC Launchpad, you agree to these terms, our privacy practices, and all applicable laws and regulations. If you do not agree, do not use this application.</p><h3>Local software &amp; Firebase integration</h3><p>PQC Launchpad is a local administrative interface that connects to Google Firebase services via the Firebase CLI. You remain solely responsible for your Google account, Firebase projects, usage costs, hosting quotas, and all content deployed to your websites.</p><h3>Permitted use</h3><p>You agree to use this software only for lawful purposes and in accordance with Firebase's Terms of Service and Acceptable Use Policy. You must not deploy malicious software, prohibited material, or content that infringes upon intellectual property rights.</p><h3>Disclaimer &amp; limitation of liability</h3><p>This software is provided "as is", without warranty of any kind, express or implied. In no event shall the authors or Parallel Quintillion Coders be liable for any claim, damages, data loss, hosting downtime, or other liability arising from the use of this software.</p><a href="https://parallelquintillioncoders.com/" target="_blank" rel="noopener noreferrer">Visit Parallel Quintillion Coders ↗</a></div></section></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <script src="/translations.js?v=5-themes-1" defer></script>
+  <script src="/preferences.js?v=5-themes-1" defer></script>
+  <script src="/app.js?v=5-themes-1" defer></script>
+  <script src="/workspace-ui.js?v=5-themes-1" defer></script>
+  <script src="/easy-setup.js?v=5-themes-1" defer></script>
+</body>
+</html>

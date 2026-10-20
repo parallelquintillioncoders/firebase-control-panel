@@ -1,0 +1,19 @@
+LAUNCHPAD EASY PUBLISH V4 — SIMPLE SETUP
+
+1) ZIP extract karo.
+2) firebase-control-panel folder kholo.
+3) Windows par START-HERE.bat par DOUBLE-CLICK karo. Mac par START-HERE-MAC.command par DOUBLE-CLICK karo. PowerShell ya commands type mat karo.
+4) Pehli baar Firebase CLI / dependencies auto install hone mein thoda time lag sakta hai. Starter window band mat karna.
+5) Browser automatic open hoga: http://127.0.0.1:4183
+6) Screen par "Easy Publish" guide dikhega.
+7) "Sign in with Google" par click karo. Google account choose karo aur Allow karo. Sign-in ke liye alag chhoti window bhi khul sakti hai.
+8) Apna Firebase Project aur Website select karo. Nahi hai toh "Create a new website" use karo.
+9) ZIP ya website folder select karke Upload karo (index.html hona chahiye).
+10) Preview check karo. Final "Publish website" click karke confirmation approve karo.
+11) Logs dekhne ho toh "Open full dashboard" -> "Activity logs".
+
+NOTE: Google ki approval bypass nahi ho sakti. Backend chalu rakhne ke liye starter window open rehni chahiye.
+NOTE: React/Vite project ka built output (dist/build) upload karo, raw project source nahi.
+NOTE: V4 port 4183 hai, purana V3 port 4173 se alag.
+
+AGAR GOOGLE LOGIN WINDOW NA DIKHE: Easy Publish mein “Sign-in window not appearing? Use browser sign-in here” click karo. “Start browser sign-in” click karo, phir “Open Google login”. Google ka code ek baar paste karke “Complete sign-in” karo.

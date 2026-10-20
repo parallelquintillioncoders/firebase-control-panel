@@ -1,0 +1,35 @@
+{
+  "name": "firebase-control-panel",
+  "version": "4.0.0",
+  "private": true,
+  "description": "cPanel-style Firebase Hosting manager with no-terminal Easy Publish wizard, bundled local Firebase CLI and Google connection",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "panel": "node scripts/panel-cli.js",
+    "help": "node scripts/panel-cli.js help",
+    "verify": "node scripts/panel-cli.js check",
+    "projects": "node scripts/panel-cli.js projects",
+    "sites": "node scripts/panel-cli.js sites",
+    "upload": "node scripts/panel-cli.js upload",
+    "preview": "node scripts/panel-cli.js preview",
+    "deploy": "node scripts/panel-cli.js deploy",
+    "jobs": "node scripts/panel-cli.js jobs",
+    "logs": "node scripts/panel-cli.js logs",
+    "test:cli": "node tests/test-panel-cli.js",
+    "check": "node --check server/index.js && node --check server/firebase-cli.js && node --check server/auth.js && node --check server/download.js && node --check server/download-worker.js && node --check public/app.js && node --check public/easy-setup.js && node --check public/workspace-ui.js && node --check public/preferences-init.js && node --check public/preferences.js && node --check public/translations.js && node --check scripts/panel-cli.js && node --check server/logout-worker.js",
+    "test": "node tests/test-auth-launch.js && node tests/test-download-logout.js",
+    "test:logout": "node tests/test-logout-worker.js",
+    "test:auth": "node tests/test-auth-launch.js && node tests/test-auth-url.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "firebase-tools": "^15.34.0"
+  }
+}
